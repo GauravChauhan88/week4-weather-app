@@ -1,0 +1,69 @@
+/* css/weather-icons.css */
+
+/* 1. Global Weather Icon Scaling & Positioning */
+.weather-condition i, 
+.forecast-day i {
+    font-family: 'Weather Icons';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2. Custom Sizing & Dynamic Drop Shadows */
+.weather-main .wi {
+    font-size: 3.5rem; /* Larger icon for current weather card */
+    filter: drop-shadow(0 4px 8px rgba(0, 210, 255, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.forecast-day .wi {
+    font-size: 2rem; /* Medium sizing for forecast block tracks */
+    margin: 0.8rem 0;
+}
+
+/* 3. Condition-Specific Color Mapping */
+/* Sunny / Clear Sky */
+.wi-owm-800, .wi-day-sunny {
+    color: #ffb300 !important; /* Vibrant Gold */
+    animation: pulse 3s infinite alternate;
+}
+
+/* Clouds (Few, Scattered, Broken) */
+.wi-owm-801, .wi-owm-802, .wi-owm-803, .wi-owm-804 {
+    color: #e0e0e0 !important; /* Soft Silver Grey */
+}
+
+/* Rain / Drizzle */
+.wi-owm-500, .wi-owm-501, .wi-owm-300, .wi-rain {
+    color: #00d2ff !important; /* Electric Rain Blue */
+}
+
+/* Thunderstorm */
+.wi-owm-211, .wi-owm-200, .wi-thunderstorm {
+    color: #9c27b0 !important; /* Deep Electric Purple */
+}
+
+/* Snow */
+.wi-owm-600, .wi-snow {
+    color: #ffffff !important;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+}
+
+/* 4. Subtle Micro-Animations for UI Polish */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 4px 8px rgba(255, 179, 0, 0.4));
+    }
+    100% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 6px 14px rgba(255, 179, 0, 0.7));
+    }
+}
+
+.weather-main .wi:hover {
+    transform: rotate(15deg) scale(1.1);
+}
